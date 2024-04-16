@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Hero from "@/modules/home/hero";
+import NewsFeed from "@/modules/home/newsfeed";
 
 export default function Home() {
   return (
     <main>
-      <div>HEllo world</div>
+      <Hero />
+      <NewsFeed />
     </main>
   );
 }

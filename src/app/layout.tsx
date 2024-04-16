@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Arimo } from "next/font/google";
 import "./globals.css";
+import Nav from "@/modules/home/nav";
+import Footer from "@/modules/home/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const arimo = Arimo({ subsets: ["latin", "vietnamese"] });
 
 export const metadata: Metadata = {
   title: "PhongzHo's Blog",
@@ -16,7 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={arimo.className}>
+      <Nav />
+      {children}
+      <Footer />
+      </body>
     </html>
   );
 }
