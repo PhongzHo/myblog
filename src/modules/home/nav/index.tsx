@@ -1,9 +1,10 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../../../public/Logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import Hamburger from 'hamburger-react'
+
 
 export default function Nav() {
     const links = [
@@ -32,12 +33,14 @@ export default function Nav() {
 
     return (
         <>
-            <nav className='flex bg-black gap-4 justify-between p-4'>
-                <div className='md:hidden'>
+            <nav className='bg-black gap-4 p-4'>
+                <div className='md:hidden flex justify-between'>
                     <Link href={"/"}>
-                        <Image src={logo} width={71} height={35} alt='logo' />
+                        <Image src={logo} width={71} height={35} alt='logo' className='pt-2'/>
                     </Link>
-                    <Hamburger toggled={isOpen} toggle={setOpen} color='white' />
+                    {
+                        isOpen ? <div></div> : <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
+                    }
                 </div>
             </nav>
         </>
