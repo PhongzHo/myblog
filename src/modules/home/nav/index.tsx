@@ -4,6 +4,7 @@ import logo from '../../../../public/Logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import Hamburger from 'hamburger-react'
+import { motion } from 'framer-motion'
 
 
 export default function Nav() {
@@ -36,11 +37,16 @@ export default function Nav() {
             <nav className='bg-black gap-4 p-4'>
                 <div className='md:hidden flex justify-between'>
                     <Link href={"/"}>
-                        <Image src={logo} width={71} height={35} alt='logo' className='pt-2'/>
+                        <Image src={logo} width={71} height={35} alt='logo' className='pt-2' />
                     </Link>
-                    {
-                        isOpen ? <div></div> : <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
-                    }
+                    <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
+                    {/* {
+                        isOpen ? <motion.div className='text-red-500'>
+                            <button onClick={() => {
+                                
+                            }}></button>
+                        </motion.div> : <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
+                    } */}
                 </div>
             </nav>
         </>
