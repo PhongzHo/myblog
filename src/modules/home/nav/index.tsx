@@ -34,12 +34,15 @@ export default function Nav() {
 
     return (
         <>
-            <nav className='bg-black gap-4 p-4'>
-                <div className='md:hidden flex justify-between'>
+            <nav className='sticky top-0 animate-slide mb-20 backdrop-blur-xl bg-[#2E3840] mx-4 rounded-br-3xl rounded-bl-3xl'>
+                {/* Mobile */}
+                <div className='flex justify-center md:justify-between p-2'>
                     <Link href={"/"}>
-                        <Image src={logo} width={71} height={35} alt='logo' className='pt-2' />
+                        <Image src={logo} width={99} alt='logo' className='select-none py-1'/>
                     </Link>
-                    <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
+                    <div className='md:hidden'>
+                        <Hamburger toggled={isOpen} size={20} toggle={setOpen} color='white' />
+                    </div>
                     {/* {
                         isOpen ? <motion.div className='text-red-500'>
                             <button onClick={() => {
